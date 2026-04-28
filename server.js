@@ -3,9 +3,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Test Ad (cat image)
-const ad = {
-  image: "https://placekitten.com/300/250",
-  link: "https://example.com"
+ const ad = {
+  image: "https://picsum.photos/300/250",
+  link: "https://picsum.photos/300/250"
 };
 
 // API to get ad
