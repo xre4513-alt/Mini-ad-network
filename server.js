@@ -4,8 +4,8 @@ const PORT = process.env.PORT || 3000;
 
 // Test Ad (cat image)
  const ad = {
-  image: "https://picsum.photos/300/250",
-  link: "https://example.com"
+  image:"https://ibb.co/B5J9kCn4",
+  link: "https://akash45.wuaze.com"
 };
 
 // API to get ad
