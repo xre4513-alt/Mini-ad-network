@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ad Dashboard</title>
+</head>
+<body>
+
+<h1>📊 Ad Network Dashboard</h1>
+
+<table border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Site</th>
+      <th>Impressions</th>
+      <th>Clicks</th>
+      <th>Earnings (₹)</th>
+    </tr>
+  </thead>
+  <tbody id="data"></tbody>
+</table>
+
+<script>
+const API = "https://mini-ad-network.onrender.com";
+
+function loadData() {
+  fetch(API + "/stats")
+    .then(res => res.json())
+    .then(data => {
+      const table = document.getElementById("data");
+      table.innerHTML = "";
+
+      for (let site in data) {
+        let row = `
+          <tr>
+            <td>${site}</td>
+            <td>${data[site].impressions}</td>
+            <td>${data[site].clicks}</td>
+            <td>₹ ${data[site].earning}</td>
+          </tr>
+        `;
+        table.innerHTML += row;
+      }
+    });
+}
+
+loadData();
+setInterval(loadData, 3000);
+</script>
+
+</body>
+</html>
